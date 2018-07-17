@@ -12,8 +12,12 @@ The website should:
   
 Getting Started
 ---------------
-Install Node.js and NPM
+1. Fork this Repo
+2. Makes sure Node.js, NPM and Gulp are installed
+3. Run `npm init -y && npm install gulp && npm install gulp-sass gulp-autoprefixer browser-sync gulp-eslint gulp-concat gulp-uglify gulp-babel babel-core babel-preset-env gulp-rename`
+4. Run `gulp`
 
+You can access the site at `localhost:3000`.
 
 Colors
 ------
@@ -25,3 +29,7 @@ Fonts
 -----
 Montserrat
 https://fonts.google.com/specimen/Montserrat
+
+Submitting
+----------
+When you are done please push the changes and send us a link.
