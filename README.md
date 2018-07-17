@@ -21,13 +21,13 @@ You can access the site at `localhost:3000`.
 
 Colors
 ------
-Black: #000
-White: #fff
-Red: #de041c
+Black: #000\
+White: #fff\
+Red: #de041c\
 
 Fonts
 -----
-Montserrat
+Montserrat\
 https://fonts.google.com/specimen/Montserrat
 
 Submitting
