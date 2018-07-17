@@ -13,7 +13,7 @@ The website should:
 Getting Started
 ---------------
 1. Fork this repository
-2. Makes sure Node.js, NPM and Gulp are installed
+2. Make sure Node.js, NPM and Gulp are installed
 3. Run `npm init -y && npm install gulp && npm install gulp-sass gulp-autoprefixer browser-sync gulp-eslint gulp-concat gulp-uglify gulp-babel babel-core babel-preset-env gulp-rename`
 4. Run `gulp`
 
