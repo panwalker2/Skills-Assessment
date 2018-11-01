@@ -1,3 +1,6 @@
 $(document).ready(function() {
-  // write your scripts here
+	$('img.youtube').click(function(){
+		var video = '<iframe src="'+ $(this).attr('data-video') +'"></iframe>';
+		$(this).replaceWith(video);
+	});
 });
