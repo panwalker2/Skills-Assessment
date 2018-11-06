@@ -12,6 +12,7 @@ body
 	color: $primary-color
 	font-family: 'Montserrat', sans-serif
 	font-weight: 400
+	overflow-x: hidden
 
 .primary
 	color: $primary-color
@@ -37,6 +38,16 @@ h2
 	+fluid-type(line-height, 450px, 1400px, 18px, 60px)
 	margin-bottom: 20px
 
+h3
+	+fluid-type(font-size, 450px, 1400px, 30px, 53px)
+	+fluid-type(letter-spacing, 450px, 1400px, -1px, -1.5px)
+	+fluid-type(line-height, 450px, 1400px, 24px, 44px)
+	margin-bottom: 28px;
+	.subhead
+		+fluid-type(font-size, 450px, 1400px, 19px, 31px)
+		letter-spacing: -0.75px
+		+fluid-type(line-height, 450px, 1400px, 15px, 26px)
+
 p
 	max-width: 56%
 	margin-left: 23%
@@ -56,57 +67,48 @@ p
 	display: flex
 	text-align: center
 	background: #999
-	height: 942px
+	height: calc(33.44vw + 300px)
 	width: 100vw
 	align-items: center 
 	justify-content: center
-	background: url(../assets/hero_1.jpg) no-repeat center
-	border-bottom: 70px solid $highlight-color
-
-.video
-	background: #000
-	height: 425px
-	width: 756px
-	position: relative
-	top: -212px
-	left: calc(50% - 378px)
-	margin-bottom: -425px
-	@media only screen and (max-width: 756px)
-		width: 100vw
-		top: 0
-		left: 0
-		margin-bottom: 0
+	background: url(../assets/hero_1.jpg)
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+	border-bottom: calc(1.82vw + 35px) solid $highlight-color
 
 .below-the-fold
-	background: #fff
-	height: 500px
+	background: #fff url(../assets/splash_watermark_light.png) no-repeat bottom right
 	width: 100vw
 	display: flex
 	flex-direction: row-reverse
 	justify-content: space-between
 	@media only screen and (max-width: 800px)
-		height: 1000px
+		height: auto
 		flex-direction: column
 		justify-content: flex-start
 
 .collage-building
-	background: #93f
-	height: 38.85vw
 	width: 50.26vw
 	@media only screen and (max-width: 800px)
 		width: 100%
+	@media only screen and (max-width: 1200px)
+		flex-direction: column-reverse
 	display: flex
 	.left-wing
 		display: flex
 		flex-direction: column
 		margin: 10px 10px 10px 0
 		border: 0
-		width: 59.17%
+		width: 60%
+		@media only screen and (max-width: 1200px)
+			width: 100%
+			margin-top: 0
 		img:nth-child(1)
 			width: 100%
 		.basement
 			display: flex
-			display: row
+			flex-direction: row
 			margin: 10px 0 0
 			.basement-left
 				margin: 0 10px 0 0
@@ -118,31 +120,97 @@ p
 				img
 					width: 100%
 	.right-wing
+		display: flex
+		flex-direction: column
 		margin: 10px 10px 10px 0
 		text-align: left
-		width: 39.79%
-		img:nth-child(1)
+		width: 38%
+		@media only screen and (max-width: 1200px)
 			width: 100%
+		img:nth-child(2)
+			width: 100%
+		.video
+			background: #000
+			width: 39.38vw
+			position: relative
+			top: -13.65vw
+			margin-bottom: calc(-13.65vw + 10px)
+			@media only screen and (max-width: 1200px)
+				top: 0
+				margin-bottom: 10px
+				width: 50.26vw
+			@media only screen and (max-width: 800px)
+				width: 100vw
+			.video-wrapper
+				position: relative
+				padding-bottom: 56.25%
+				padding-top: 25px
+				height: 0
+				.youtube
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+					border: 0
 		.cellar
+			display: flex
+			flex-direction: row
+			margin: 10px 0 0
 			width: 61.72%
 			img
 				width: 100%
+				height: 100%
 
 .copy
 	display: flex
-	background: url(../assets/splash_watermark.png) no-repeat bottom right
-	background-color: rgba(255, 255, 255, 0.8)
-	background-blend-mode: lighten
-	align-items: center 
-	justify-content: center 
-	height: 500px
+	align-items: top 
+	justify-content: left
 	width: 50%
 	@media only screen and (max-width: 800px)
 		width: 100%
 		max-width: 100%
 	text-align: left
-
+	div
+		+fluid-type(margin-left, 450px, 600px, 40px, 50px)
+		+fluid-type(margin-top, 450px, 1400px, 108px, 288px)
+		margin-bottom: 100px
+		width: 100%
+		p
+			margin-left: 0
+			font-size: 13px
+			line-height: 17px
+			max-width: initial
+			font-weight: 600
+			+fluid-type(margin-right, 450px, 1400px, 50px, 215px)
+		p.highlight
+			font-weight: 900
 	.subhead
 		display: block
+	h3:after
+		content: ""
+		display: block
+		width: 100%
+		background-color: #000
+		height: 5px
+		margin-top: 30px
 
+
+.animate div
+	opacity: 0
+	transition: all 700ms ease-out
+	backface-visibility: hidden
+
+.bounce-up div
+	transform: translate3d(0px, 500px, 0px)
+.bounce-left div
+	transform: translate3d(500px, 0, 0px)
+.bounce-down div
+	transform: translate3d(0px, -500px, 0px)
+.bounce-right div
+	transform: translate3d(-500px, 0, 0px)
+
+.animate.in-view div
+	opacity: 1
+	transform: translate3d(0px, 0px, 0px)
 
